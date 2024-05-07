@@ -355,4 +355,13 @@ h3{
 
 #aside-header{
   margin-top: 0;
+  margin-bottom: 3px;
+}
+
+#aside-topics{
+  border-right: 1px solid rgb(47, 130, 207);
+  border-bottom: 1px solid rgb(47, 130, 207);
+  border-top: 1px solid #abcff0;
+  border-bottom: 1px solid #abcff0;
+  margin-bottom: 10px;
 }

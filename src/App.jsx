@@ -4,21 +4,19 @@ import Header from "./components/Header";
 import Aside from "./components/Aside";
 import Home from "./components/Home";
 import "./App.css";
-import getArticles from "../api";
-import axios from "axios";
+import { getArticles, getTopics } from "../api";
 
 function App() {
   const [articles, setArticles] = useState([]);
-  // const [topics, setTopics] = useState([]);
+  const [topics, setTopics] = useState([]);
 
   useEffect(() => getArticles(setArticles), []);
-  // useEffect(() => getTopics(setTopics), []);
-  console.log(articles);
+  useEffect(() => getTopics(setTopics), []);
   return (
     <>
       <Header />
       <main className="bodyMain">
-        <Aside />
+        <Aside topics={topics} />
         <Home articles={articles} />
       </main>
     </>
