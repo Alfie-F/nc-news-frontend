@@ -1,7 +1,133 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+ height: 100vh;
   text-align: center;
+  background-color: rgb(232, 244, 255);
 }
 
+body{
+  margin: 0;
+}
+
+.header {
+  position: sticky; top: 0;
+  display: grid;
+  grid-template-columns: minmax(100px,25%) 25% 25% 25%;
+  grid-template-rows: 40px 50px;
+  grid-template-areas: 
+  "logos home account options"
+    "logo-3 search search search";
+  font-size: 10%;
+  padding: 10px;
+  text-align: center;
+  border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+  /* overflow-x:auto; */
+  font-size: 25px;
+  white-space: nowrap;
+  border-right: 3px solid rgb(47, 130, 207);
+  border-bottom: 3px solid rgb(47, 130, 207);
+  background-color: #ffffff;
+}
+
+#logo{
+  width: 7rem;
+  height: 2rem;
+  padding-left: 10px;
+  padding-top: 3px;
+  grid-area: logos;
+}
+
+#logo-2{
+  width: 2.5rem;
+  height: 2.5rem;
+  padding-left: 125px;
+  grid-area: logos;
+}
+
+#logo-3{
+  color:rgb(47, 130, 207) ;
+  font-size: 30px;
+  height: 2.5rem;
+  padding-left: 10px;
+  padding-top: 10px;
+  grid-area: logo-3;
+  margin: 0;
+  text-align: left;
+}
+
+@media screen and (max-width:520px) {  
+  #logo-2{
+    display: none;
+  }
+  #search{
+    display: none;}
+}
+
+#home{
+  grid-area: home;
+  padding-left: 25%;
+}
+#account{
+  grid-area: account;
+}
+#options{
+  grid-area: options;
+  border-right: none
+}
+#search{
+  grid-area: search;
+  color:rgb(47, 130, 207) ;
+  font-size: 30px;
+  height: 2.5rem;
+  padding-left: 100px;
+  padding-top: 10px;
+  margin: 0;
+  text-align: center;
+  border-right: none
+}
+
+.linkInHeader{
+  color:rgb(47, 130, 207) ;
+  border-right: 3px solid rgb(47, 130, 207);
+  text-decoration: none;
+}
+
+#aside{
+  height: 500px
+}
+
+aside{
+  background-color: #ffffff;
+  margin-top: 10px;
+  color:rgb(47, 130, 207) ;
+  text-align: left;
+  width: 8rem;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-right: 3px solid rgb(47, 130, 207);
+  border-bottom: 3px solid rgb(47, 130, 207);
+  border-top: 3px solid #abcff0;
+  border-bottom-right-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  overflow: auto;
+  height: 500px;
+  position: sticky; top: 0;
+}
+
+.bodyMain{
+  display: grid;
+  grid-template-columns: 8rem auto;
+  grid-template-rows: 40px 50px;
+  /* grid-template-areas:  */
+}
+
+#homeMain{
+  margin-left: 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border-top: 3px solid #abcff0;
+  border-right: 3px solid rgb(47, 130, 207);
+  border-bottom: 3px solid rgb(47, 130, 207);
+  border-left: 3px solid #abcff0;
+}
