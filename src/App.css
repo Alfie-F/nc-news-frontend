@@ -2,6 +2,8 @@
  height: 100vh;
   text-align: center;
   background-color: rgb(232, 244, 255);
+  min-width: 480px;
+  overflow-x: hidden;
 }
 
 body{
@@ -55,13 +57,6 @@ body{
   text-align: left;
 }
 
-@media screen and (max-width:520px) {  
-  #logo-2{
-    display: none;
-  }
-  #search{
-    display: none;}
-}
 
 #home{
   grid-area: home;
@@ -126,8 +121,129 @@ aside{
   margin-left: 25px;
   background-color: #ffffff;
   border-radius: 10px;
-  border-top: 3px solid #abcff0;
-  border-right: 3px solid rgb(47, 130, 207);
-  border-bottom: 3px solid rgb(47, 130, 207);
-  border-left: 3px solid #abcff0;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
+  height: fit-content;
+}
+
+ul{
+  margin: 5px;
+  border-radius: 10px;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
+color: black;
+list-style: none;
+display: grid;
+text-align: left;
+padding-left: 10px;
+grid-template-columns: minmax(120px, 20%) 30% 30% 10%;
+  grid-template-rows: auto 30% 30%;
+  grid-template-areas: 
+  "title title title pic"
+  "topic author . pic"
+  "votes comments created_at pic";
+    /* overflow-x:auto; */
+    white-space: nowrap;
+    height:auto
+}
+
+li{
+  padding: 5px;
+  margin: 1px;
+  border-radius: 3px;
+  /* padding-left: 2px; */
+  padding:3px ;
+}
+
+#article{
+  height: auto;
+  padding-bottom: 30px;
+}
+
+/* #article_id{} */
+#title{
+  grid-area: title;
+  /* white-space: pre; */
+  border-bottom: 2px solid black;
+}
+#topic{
+  grid-area: topic;
+  white-space: nowrap;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+#author{ 
+  grid-area: author;
+  padding-left: 2px;
+  white-space: nowrap;
+  border-bottom: 1px solid black;
+  /* border-right: 1px solid black; */
+}
+/* #body{} */
+
+#article_img_url{
+  height: 40px;
+  width: 40px;
+  grid-area: pic;
+  white-space: nowrap;
+}
+#comment_count{
+  grid-area: comments;
+  padding-left: 20px;
+  white-space: nowrap;
+  border-right: 1px solid black;
+}
+#votes{
+  grid-area: votes;
+  white-space: nowrap;
+  border-right: 1px solid black;
+  /* padding-right: 20px; */
+}
+
+#created_at{
+  grid-area: created_at;
+  /* padding-left: 20px; */
+  white-space: nowrap;
+}
+
+h3{
+  padding-top: 0px;
+  margin: 2px;
+  border-bottom: 1px solid black;
+  padding-left: 2px;
+  /* padding-right: px; */
+  width: 300%;
+  white-space: wrap;
+}
+
+@media screen and (max-width:520px) {  
+  #logo-2{
+    display: none;
+  }
+  #search{
+    display: none;
+  }
+  #created_at{
+     display: none;
+  }
+  #article_img_url{
+    padding-right: 134px;
+  }
+  #comment_count{
+    padding-right: 134px;
+  }
+  #author{
+    border-right: none;
+    padding-right: 150px;
+  }
+  h3{
+    width: 240%;
+  }
+  main{
+    width: 310px;
+  }
 }

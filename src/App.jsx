@@ -4,25 +4,13 @@ import Header from "./components/Header";
 import Aside from "./components/Aside";
 import Home from "./components/Home";
 import "./App.css";
-// import getArticles from "../../api";
+import getArticles from "../../api";
 import axios from "axios";
 
 function App() {
   const [articles, setArticles] = useState([]);
 
-  const getArticles = () => {
-    // return
-    axios
-      .get("https://alfs-nc-news.onrender.com/api/articles")
-      .then((articlesData) => {
-        const allArticles = articlesData.data.articles;
-        return setArticles(allArticles);
-      });
-  };
-  console.log(articles);
-
-  useEffect(() => getArticles(), []);
-
+  useEffect(() => getArticles(setArticles), []);
   return (
     <>
       <Header />
