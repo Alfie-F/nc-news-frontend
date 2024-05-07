@@ -4,13 +4,16 @@ import Header from "./components/Header";
 import Aside from "./components/Aside";
 import Home from "./components/Home";
 import "./App.css";
-import getArticles from "../../api";
+import getArticles from "../api";
 import axios from "axios";
 
 function App() {
   const [articles, setArticles] = useState([]);
+  // const [topics, setTopics] = useState([]);
 
   useEffect(() => getArticles(setArticles), []);
+  // useEffect(() => getTopics(setTopics), []);
+  console.log(articles);
   return (
     <>
       <Header />

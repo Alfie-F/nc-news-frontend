@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const Home = ({ articles }) => {
-  console.log(articles);
   return (
     <main id="homeMain">
       {articles.map((article) => {
@@ -31,10 +30,11 @@ const Home = ({ articles }) => {
               width="40px"
               height="40px"
             >
-              {/* <img
+              <img
+                id="article-img"
                 src={article.article_img_url}
                 alt={article.article_img_url}
-              /> */}
+              />
             </li>
           </ul>
         );

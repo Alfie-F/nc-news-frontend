@@ -1,9 +1,10 @@
 #root {
- height: 100vh;
+ /* height: 300vh; */
   text-align: center;
-  background-color: rgb(232, 244, 255);
+  background-color: rgb(155, 204, 250);
   min-width: 480px;
-  overflow-x: hidden;
+  /* overflow-y: auto; */
+  /* overflow-x: default; */
 }
 
 body{
@@ -87,11 +88,15 @@ body{
   text-decoration: none;
 }
 
-#aside{
+/* #aside{
+  position: sticky; top: 20px;
   height: 500px
-}
+} */
 
 aside{
+  position: sticky; 
+  top: 124px;
+  /* overflow: auto; */
   background-color: #ffffff;
   margin-top: 10px;
   color:rgb(47, 130, 207) ;
@@ -105,20 +110,24 @@ aside{
   border-top: 3px solid #abcff0;
   border-bottom-right-radius: 2.5rem;
   border-top-right-radius: 2.5rem;
-  overflow: auto;
   height: 500px;
-  position: sticky; top: 0;
 }
 
 .bodyMain{
-  display: grid;
-  grid-template-columns: 8rem auto;
-  grid-template-rows: 40px 50px;
+  /* display: grid; */
+  /* grid-template-columns: 8rem auto;
+  grid-template-rows: 40px 50px; */
   /* grid-template-areas:  */
+  display: sticky;
+  background-color: rgb(155, 204, 250);
+    /* display: grid; */
+  /* grid-template-columns: 8rem auto;
+  grid-template-rows: 40px 50px; */
 }
 
 #homeMain{
-  margin-left: 25px;
+  margin-top: -530px;
+  margin-left: 155px;
   background-color: #ffffff;
   border-radius: 10px;
   border-top: 3px solid #c7c7c7;
@@ -126,6 +135,7 @@ aside{
   border-bottom: 3px solid rgb(0, 0, 0);
   border-left: 3px solid #c7c7c7;
   height: fit-content;
+  
 }
 
 ul{
@@ -140,15 +150,19 @@ list-style: none;
 display: grid;
 text-align: left;
 padding-left: 10px;
-grid-template-columns: minmax(120px, 20%) 30% 30% 10%;
-  grid-template-rows: auto 30% 30%;
+grid-template-columns: minmax(120px, 20%) 30% 40% max-content;
+  grid-template-rows: auto auto auto auto;
   grid-template-areas: 
-  "title title title pic"
-  "topic author . pic"
-  "votes comments created_at pic";
+  "title title title pic "
+  "topic author . pic "
+  "votes comments created_at pic "
+  ". . . pic";
     /* overflow-x:auto; */
     white-space: nowrap;
-    height:auto
+    height:auto;
+    /* padding: 0px; */
+    padding-bottom: 0px;
+    /* white-space: pre; */
 }
 
 li{
@@ -161,14 +175,12 @@ li{
 
 #article{
   height: auto;
-  padding-bottom: 30px;
+  padding-bottom: 1px
 }
 
 /* #article_id{} */
 #title{
   grid-area: title;
-  /* white-space: pre; */
-  border-bottom: 2px solid black;
 }
 #topic{
   grid-area: topic;
@@ -181,19 +193,24 @@ li{
   padding-left: 2px;
   white-space: nowrap;
   border-bottom: 1px solid black;
-  /* border-right: 1px solid black; */
+  border-right: 1px solid black;
 }
 /* #body{} */
 
 #article_img_url{
-  height: 40px;
-  width: 40px;
+  height: auto;
+  width: 140px;
+  /* max-width: 140px; */
   grid-area: pic;
-  white-space: nowrap;
+  /* float: right; */
+  /* white-space: nowrap; */
+  padding-bottom: 0px;
+  padding-left: 20px;
+  float: right;
 }
 #comment_count{
   grid-area: comments;
-  padding-left: 20px;
+  padding-left: 2px;
   white-space: nowrap;
   border-right: 1px solid black;
 }
@@ -201,6 +218,9 @@ li{
   grid-area: votes;
   white-space: nowrap;
   border-right: 1px solid black;
+  /* border-bottom: 1px solid black;
+  border-left: 1px solid #c7c7c7;
+  border-top: 1px solid #c7c7c7; */
   /* padding-right: 20px; */
 }
 
@@ -208,16 +228,77 @@ li{
   grid-area: created_at;
   /* padding-left: 20px; */
   white-space: nowrap;
+  border-right: 1px solid black;
 }
 
 h3{
   padding-top: 0px;
   margin: 2px;
-  border-bottom: 1px solid black;
   padding-left: 2px;
   /* padding-right: px; */
   width: 300%;
   white-space: wrap;
+}
+
+
+
+@media screen and (max-width:1140px) {  
+  #article_img_url{
+  margin-right: 40%;
+  }
+  ul{
+  grid-template-columns: minmax(120px, 20%) 32% 20% max-content;
+  }
+  #created_at{
+    display: none;
+  }
+}
+
+#article-img{
+  /* height: 100%;
+  width: 100%; */
+  height: auto;
+  width: 120%;
+  border-radius: 20px;
+  padding: 0%;
+  text-align: right;
+  float: right;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
+  width: 240px;
+  margin-right: minmax(40px, 20%);
+}
+
+
+@media screen and (max-width:800px) {  
+  #article_img_url{
+    display: none;
+  }
+  #article{
+    padding-bottom: 30px
+  }
+  #comment_count{
+    border-right: none;
+    padding-right: 134px;
+  }
+  #author{
+    border-right: none;
+    padding-right: 134px;
+  }
+  /* main{
+    width: 420px;
+  } */
+}
+
+@media screen and (max-width:690px) {  
+  #comment_count{
+    padding-right: 144px;
+  }
+  #author{
+    padding-right: 144px;
+  }
 }
 
 @media screen and (max-width:520px) {  
@@ -230,20 +311,48 @@ h3{
   #created_at{
      display: none;
   }
-  #article_img_url{
-    padding-right: 134px;
-  }
   #comment_count{
+    border-right: none;
     padding-right: 134px;
   }
   #author{
     border-right: none;
-    padding-right: 150px;
+    padding-right: 100px;
+    text-wrap:wrap;
+    height: 60px;
+    margin-bottom: 20px;
   }
   h3{
-    width: 240%;
+    width: 220%;
   }
   main{
-    width: 310px;
+    width: 280px;
   }
+  #topic{
+    padding-left: 0px;
+    height: 60px;
+  }
+  /* #votes{
+    margin-top: 20px;
+ }
+ #comment_count{
+  margin-top: 20px;
+  padding-left: 0px; 
+ }*/
+ ul{
+ grid-template-areas: 
+ "title title title . "
+ "topic author . . "
+ "votes comments created_at . "
+ "pic pic . .";
+ }
+ #article_img_url{
+  display:grid;
+  margin-left: -20px;
+  
+}
+}
+
+#aside-header{
+  margin-top: 0;
 }
