@@ -7,7 +7,7 @@ const Header = () => {
     <header className="header">
       <img src={image2} alt="Newwit logo-2" className="logo-2" id="logo-2" />
       <img src={img} alt="Newwit logo" className="logo" id="logo" />
-      <h2 id="logo-3">Your home for news...</h2>
+      <h2 id="logo-3">Your home for news!</h2>
       <Link to="/" className="linkInHeader" id="home">
         Home
       </Link>
