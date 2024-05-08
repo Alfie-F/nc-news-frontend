@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getTopics } from "../../api";
 
-const Aside = ({ topics }) => {
+const Aside = () => {
+  const [topics, setTopics] = useState([]);
+  useEffect(() => getTopics(setTopics), []);
+
   const [hideAside, setHideAside] = useState(true);
   function changeHideAside() {
     setHideAside(!hideAside);
@@ -16,7 +20,7 @@ const Aside = ({ topics }) => {
   }
   return (
     <>
-      <aside id="asideButton">
+      <aside id="asideButton2">
         <button id="aside-hide" onClick={changeHideAside}>
           Toggle Topics{" "}
         </button>

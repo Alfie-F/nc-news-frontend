@@ -1,4 +1,11 @@
-const Home = ({ articles }) => {
+import { getArticles } from "../../api";
+import { useState, useEffect } from "react";
+
+const Home = () => {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => getArticles(setArticles), []);
+
   return (
     <main id="homeMain">
       {articles.map((article) => {
