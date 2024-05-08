@@ -1,8 +1,13 @@
+import Aside from "./Aside";
+
 const Account = () => {
   return (
-    <main id="nonMainPageMain" className="accountPage">
-      tests account page
-    </main>
+    <>
+      <Aside />
+      <main id="homeMain" className="accountPage">
+        tests account page
+      </main>
+    </>
   );
 };
 

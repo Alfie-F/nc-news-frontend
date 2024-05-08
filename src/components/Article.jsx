@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getArticle } from "../../api";
 import Loading from "./Loading";
+import Aside from "./Aside";
 
 const Article = () => {
   const { article_id } = useParams();
@@ -17,6 +18,7 @@ const Article = () => {
   if (isLoading) return <Loading />;
   return (
     <>
+      <Aside />
       <main id="nonMainPageMain" className="accountPage">
         <h1 id="article_title">{article.title}</h1>
         <p id="topic">Topic: {article.topic}</p>

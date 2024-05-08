@@ -12,7 +12,6 @@ function App() {
     <>
       <Header />
       <main className="bodyMain">
-        <Aside />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles/:article_id" element={<Article />} />

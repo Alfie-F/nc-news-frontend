@@ -3,26 +3,34 @@ import { getTopics } from "../../api";
 
 const Aside = () => {
   const [topics, setTopics] = useState([]);
-  useEffect(() => getTopics(setTopics), []);
+  const [hideAside, setHideAside] = useState();
 
-  const [hideAside, setHideAside] = useState(true);
-  function changeHideAside() {
+  useEffect(() => {
+    getTopics().then((topics) => {
+      setTopics(topics);
+      setHideAside(true);
+    });
+  }, []);
+
+  function sayHi() {
     setHideAside(!hideAside);
+
     if (hideAside) {
       document.getElementById("aside2").id = "aside-hide-false";
       document.getElementById("homeMain").id = "homeMain2";
-      document.getElementById("asideButton2").id = "asideButton";
+      document.getElementById("asideButton").id = "asideButton2";
     } else {
       document.getElementById("aside-hide-false").id = "aside2";
       document.getElementById("homeMain2").id = "homeMain";
-      document.getElementById("asideButton").id = "asideButton2";
+      document.getElementById("asideButton2").id = "asideButton";
     }
   }
+
   return (
     <>
-      <aside id="asideButton2">
-        <button id="aside-hide" onClick={changeHideAside}>
-          Toggle Topics{" "}
+      <aside id="asideButton">
+        <button id="aside-hide" onClick={sayHi}>
+          Toggle Topics
         </button>
       </aside>
 
