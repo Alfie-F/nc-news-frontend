@@ -1,11 +1,11 @@
 import axios from "axios";
 
 export function getArticles(setArticles) {
-  axios
+  return axios
     .get("https://alfs-nc-news.onrender.com/api/articles")
     .then((articlesData) => {
       const allArticles = articlesData.data.articles;
-      return setArticles(allArticles);
+      return allArticles;
     });
 }
 
@@ -15,5 +15,14 @@ export function getTopics(setTopics) {
     .then((topicsData) => {
       const allTopics = topicsData.data.topics;
       return setTopics(allTopics);
+    });
+}
+
+export function getArticle(setArticle, article_id) {
+  axios
+    .get(`https://alfs-nc-news.onrender.com/api/articles/${article_id}`)
+    .then((articleData) => {
+      const article = articleData.data.article;
+      return setArticle(article);
     });
 }

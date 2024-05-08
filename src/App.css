@@ -236,15 +236,15 @@ font-size: 25px;
 
 @media screen and (max-width:1300px) {  
   #article-img{
-margin-right: 45%
+margin-right: 50px
   }
 }
 @media screen and (max-width:1140px) {  
   #article_img_url{
-  margin-right: 40%;
+  margin-right: 39%;
   }
   #article-img{
-    margin-right: 5%
+    margin-right: 4%
 }
   li{
   grid-template-columns: minmax(120px, 20%) 32% 20% max-content;
@@ -287,10 +287,12 @@ margin-right: 45%
     display: none;
  }
  #comment_count{
-   padding-right: 110px;
+   padding-right: 210px;
+   padding-left: 50px;
  }
  #author{
-   padding-right: 110px;
+  padding-right: 210px;
+  padding-left: 50px;
    text-wrap:wrap;
    height: 60px;
    margin-bottom: 20px;
@@ -298,7 +300,12 @@ margin-right: 45%
  #topic{
   padding-left: 0px;
   height: 60px;
-}
+  padding-right: 150px;
+  /* margin-right: 100px; */
+  }
+  #votes{
+    padding-right: 150px;
+  }
   h3{
     width: 370%;
   }
@@ -326,6 +333,15 @@ margin-right: 45%
   h3{
     width: 270%;
   }
+  #comment_count{
+    padding-right: 110px;
+    padding-left: 50px;
+  }
+  #author{
+   padding-right: 110px;
+   padding-left: 50px;
+  }
+  
 }  
 
 @media screen and (max-width:580px) {  
@@ -350,15 +366,17 @@ margin-right: 45%
   }
   #comment_count{
     padding-right: 110px;
+    padding-left: 5px;
   }
   #author{
     padding-right: 110px;
     text-wrap:wrap;
     height: 60px;
     margin-bottom: 20px;
+    padding-left: 5px;
   }
   h3{
-    width: 200%;
+    width: 228%;
   }
   main{
     width: 80%;
@@ -370,6 +388,10 @@ margin-right: 45%
   #topic{
     padding-left: 0px;
     height: 60px;
+    padding-right: 100px;
+  }
+  #votes{
+    padding-right: 100px;
   }
  li{
  grid-template-areas: 
@@ -472,4 +494,19 @@ main{
   border-bottom: 3px solid rgb(0, 0, 0);
   border-left: 3px solid #c7c7c7;
   top: 140px;
+}
+
+#loading{
+  font-size: 80px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
+  margin-left: 140px;
+  padding-top: 300px; 
+  margin-top: -200px;
+  height: 100vh;
+  z-index: 1;
 }

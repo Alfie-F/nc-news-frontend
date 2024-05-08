@@ -15,7 +15,7 @@ function App() {
         <Aside />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/articles/:article" element={<Article />} />
+          <Route path="/articles/:article_id" element={<Article />} />
           <Route path="/account" element={<Account />} />
           <Route path="/account/options" element={<Options />} />
         </Routes>
