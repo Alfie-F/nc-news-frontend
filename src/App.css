@@ -1,10 +1,7 @@
 #root {
- /* height: 300vh; */
   text-align: center;
   background-color: rgb(155, 204, 250);
   min-width: 480px;
-  /* overflow-y: auto; */
-  /* overflow-x: default; */
 }
 
 body{
@@ -89,10 +86,6 @@ body{
   text-decoration: none;
 }
 
-/* #aside{
-  position: sticky; top: 20px;
-  height: 500px
-} */
 
 aside{
   position: sticky; 
@@ -116,18 +109,9 @@ aside{
 }
 
 .bodyMain{
-  /* display: grid; */
-  /* grid-template-columns: 8rem auto;
-  grid-template-rows: 40px 50px; */
-  /* grid-template-areas:  */
-  /* display: sticky; */
   position: relative;
   margin-top: -340px;
-  /* background-color: rgb(155, 204, 250); */
   z-index: -0;
-    /* display: grid; */
-  /* grid-template-columns: 8rem auto;
-  grid-template-rows: 40px 50px; */
 }
 
 #homeMain{
@@ -186,7 +170,6 @@ li{
   padding-bottom: 1px
 }
 
-/* #article_id{} */
 #title{
   grid-area: title;
   border-right: #abcff0;
@@ -204,15 +187,11 @@ li{
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
-/* #body{} */
 
 #article_img_url{
   height: auto;
   width: 140px;
-  /* max-width: 140px; */
   grid-area: pic;
-  /* float: right; */
-  /* white-space: nowrap; */
   padding-bottom: 0px;
   padding-left: 20px;
   float: right;
@@ -230,10 +209,6 @@ li{
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
-  /* border-bottom: 1px solid black;
-  border-left: 1px solid #c7c7c7;
-  border-top: 1px solid #c7c7c7; */
-  /* padding-right: 20px; */
 }
 
 #created_at{
@@ -291,24 +266,6 @@ margin-right: 45%
 }
 
 
-/* @media screen and (max-width:950px) {  
-  #article_img_url{
-    display: none;
-  }
-  #article{
-    padding-bottom: 30px
-  }
-  #comment_count{
-    border-right: none;
-    padding-right: 14px;
-  }
-  #author{
-    border-right: none;
-    padding-right: 144px;
-  }
-  /* main{
-    width: 420px;
-  } */
  
 @media screen and (max-width:950px) {  
   #created_at{
@@ -328,7 +285,7 @@ margin-right: 45%
   height: 60px;
 }
   h3{
-    width: 240%;
+    width: 420%;
   }
   main{
     width: 80%;
@@ -350,6 +307,12 @@ margin-right: 45%
    }
 }
 
+@media screen and (max-width:740px) {
+  h3{
+    width: 270%;
+  }
+}  
+
 @media screen and (max-width:540px) {  
   #logo-2{
     display: none;
@@ -360,6 +323,9 @@ margin-right: 45%
   }
   #logo-3{
     display: none;
+  }
+  h3{
+    width: 240%;
   }
 }
 
@@ -454,4 +420,15 @@ button:hover{background-color:rgb(47, 130, 207);}
   /* width: 460px; */
   /* padding-right: 140px; */
   top: 140px;
+}
+
+#asideButton{
+  margin-left: -110px;
+}
+
+#asideButton2{
+}
+
+#asideButton:hover{
+margin-left: 0px;
 }
