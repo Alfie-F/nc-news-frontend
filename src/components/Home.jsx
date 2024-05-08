@@ -8,42 +8,34 @@ const Home = () => {
 
   return (
     <main id="homeMain">
-      {articles.map((article) => {
-        return (
-          <ul id="article">
-            <li key={article.article_id} id="article_title">
-              <h3>{article.title}</h3>
+      <ul id="article">
+        {articles.map((article) => {
+          return (
+            <li key={article.article_id}>
+              <h3 id="article_title">{article.title}</h3>
+              <p id="topic">Topic: {article.topic}</p>
+              <p id="author">Author: {article.author}</p>
+              <p id="comment_count"> Comments: {article.comment_count}</p>
+              <p id="votes">Votes: {article.votes}</p>
+              <p id="created_at">
+                Posted on {article.created_at.split("T")[0]}
+              </p>
+              <p
+                key={article.article_id}
+                id="article_img_url"
+                width="40px"
+                height="40px"
+              >
+                <img
+                  id="article-img"
+                  src={article.article_img_url}
+                  alt={article.article_img_url}
+                />
+              </p>
             </li>
-            <li key={article.article_id} id="topic">
-              Topic: {article.topic}
-            </li>
-            <li key={article.article_id} id="author">
-              Author: {article.author}
-            </li>
-            <li key={article.article_id} id="comment_count">
-              Comments: {article.comment_count}
-            </li>
-            <li key={article.article_id} id="votes">
-              Votes: {article.votes}
-            </li>
-            <li key={article.article_id} id="created_at">
-              Posted on {article.created_at.split("T")[0]}
-            </li>
-            <li
-              key={article.article_id}
-              id="article_img_url"
-              width="40px"
-              height="40px"
-            >
-              <img
-                id="article-img"
-                src={article.article_img_url}
-                alt={article.article_img_url}
-              />
-            </li>
-          </ul>
-        );
-      })}
+          );
+        })}
+      </ul>
     </main>
   );
 };

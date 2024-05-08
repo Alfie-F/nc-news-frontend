@@ -4,6 +4,7 @@ import Aside from "./components/Aside";
 import Home from "./components/Home";
 import Article from "./components/Article";
 import Account from "./components/Account";
+import Options from "./components/Options";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/articles/:article" element={<Article />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/account/options" element={<Options />} />
         </Routes>
       </main>
     </>

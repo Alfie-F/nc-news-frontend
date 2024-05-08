@@ -1,9 +1,9 @@
-const Account = () => {
+const Options = () => {
   return (
     <main id="nonMainPageMain" className="accountPage">
-      tests account page
+      tests options page
     </main>
   );
 };
 
-export default Account;
+export default Options;
