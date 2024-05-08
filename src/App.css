@@ -360,7 +360,7 @@ margin-right: 50px
   }
 }
 
-@media screen and (max-width:490px) {  
+@media screen and (max-width:510px) {  
   #created_at{
      display: none;
   }
@@ -509,4 +509,5 @@ main{
   margin-top: -200px;
   height: 100vh;
   z-index: 1;
+  width: 80%;
 }

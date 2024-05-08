@@ -18,11 +18,11 @@ export function getTopics(setTopics) {
     });
 }
 
-export function getArticle(setArticle, article_id) {
-  axios
+export function getArticle(article_id) {
+  return axios
     .get(`https://alfs-nc-news.onrender.com/api/articles/${article_id}`)
     .then((articleData) => {
       const article = articleData.data.article;
-      return setArticle(article);
+      return article;
     });
 }
