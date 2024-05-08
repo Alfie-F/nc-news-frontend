@@ -19,25 +19,19 @@ const Article = () => {
   return (
     <>
       <Aside />
-      <main id="nonMainPageMain" className="accountPage">
-        <h1 id="article_title">{article.title}</h1>
-        <p id="topic">Topic: {article.topic}</p>
-        <p id="author">Author: {article.author}</p>
-        <p id="comment_count"> Comments: {article.comment_count}</p>
-        <p id="votes">Votes: {article.votes}</p>
-        <p id="created_at">Posted on {article.created_at.split("T")[0]}</p>
-        <p
-          key={article.article_id}
-          id="article_img_url"
-          width="40px"
-          height="40px"
-        >
-          <img
-            id="article-img"
-            src={article.article_img_url}
-            alt={article.article_img_url}
-          />
-        </p>
+      <main id="homeMain" className="page">
+        <h1 id="article_title_art">{article.title}</h1>
+        <p id="topic_art">Topic: {article.topic}</p>
+        <p id="author_art">Author: {article.author}</p>
+        <p id="comment_count_art"> Comments: {article.comment_count}</p>
+        <p id="votes_art">Votes: {article.votes}</p>
+        <p id="body_art">{article.body}</p>
+        <p id="created_at_art">Posted on: {article.created_at.split("T")[0]}</p>
+        <img
+          id="article_img_art"
+          src={article.article_img_url}
+          alt={article.article_img_url}
+        />
       </main>
     </>
   );

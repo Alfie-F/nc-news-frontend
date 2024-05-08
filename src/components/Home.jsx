@@ -32,7 +32,7 @@ const Home = () => {
                 <p id="comment_count"> Comments: {article.comment_count}</p>
                 <p id="votes">Votes: {article.votes}</p>
                 <p id="created_at">
-                  Posted on {article.created_at.split("T")[0]}
+                  Posted on: {article.created_at.split("T")[0]}
                 </p>
                 <p
                   key={article.article_id}
