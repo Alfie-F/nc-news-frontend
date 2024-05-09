@@ -4,7 +4,7 @@ const Options = () => {
   return (
     <>
       <Aside />
-      <main id="homeMain" className="accountPage">
+      <main id="homeMain" className="page">
         tests options page
       </main>
     </>

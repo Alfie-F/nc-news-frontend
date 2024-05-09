@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Aside from "./Aside";
 
 const Loading = () => {
+  scrollTo(0, 0);
   return (
     <>
       <main id="loading">Loading...</main>;
