@@ -5,7 +5,6 @@ import Loading from "./Loading";
 import Aside from "./Aside";
 
 const Article = () => {
-  // const [hasVoted, setHasVoted] = useState(storedVote)
   const { article_id } = useParams();
   const storedVote = JSON.parse(localStorage.getItem(`hasVoted${article_id}`));
   const [article, setArticle] = useState([]);
@@ -15,6 +14,8 @@ const Article = () => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [renderIgnore, setRenderIgnore] = useState(false);
+
+  console.log(storedVote);
 
   useEffect(() => {
     getArticle(article_id)
@@ -33,11 +34,15 @@ const Article = () => {
   useEffect(() => {
     if (renderIgnore) {
       let subNum = -1;
+      if (optimisticVote === 1) {
+        subNum = -2;
+      }
       postVote(article_id, subNum);
       setOptimisticVote(-1);
       localStorage.setItem(`hasVoted${article_id}`, JSON.stringify(-1));
       document.getElementById("voteButtonDown").disabled = true;
       document.getElementById("voteButton").disabled = false;
+      localStorage.setItem(`hasVoted${article_id}`, JSON.stringify("down"));
     } else {
       setRenderIgnore(true);
     }
@@ -46,11 +51,15 @@ const Article = () => {
   useEffect(() => {
     if (renderIgnore) {
       let subNum = 1;
+      if (optimisticVote === -1) {
+        subNum = 2;
+      }
       postVote(article_id, subNum);
       setOptimisticVote(1);
       localStorage.setItem(`hasVoted${article_id}`, JSON.stringify(1));
       document.getElementById("voteButton").disabled = true;
       document.getElementById("voteButtonDown").disabled = false;
+      localStorage.setItem(`hasVoted${article_id}`, JSON.stringify("up"));
     } else {
       setRenderIgnore(true);
     }
