@@ -37,3 +37,15 @@ export function getComments(article_id) {
       return comments;
     });
 }
+
+export function postVote(article_id, vote) {
+  console.log(vote);
+
+  axios
+    .patch(`https://alfs-nc-news.onrender.com/api/articles/${article_id}`, {
+      inc_votes: vote,
+    })
+    .then((res) => {
+      return res.data.update;
+    });
+}
