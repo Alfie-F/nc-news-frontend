@@ -2,6 +2,7 @@
   text-align: center;
   background-color: rgb(155, 204, 250);
   min-width: 480px;
+  background-size: cover;
 }
 
 body{
@@ -109,7 +110,9 @@ aside{
 
 .bodyMain{
   position: relative;
-
+  background-color: #abcff0;
+  /* background-repeat: repeat-y;
+  background-attachment: fixed; */
   /* z-index: -0; */
 }
 
@@ -359,42 +362,6 @@ main{
   margin-left: -100px
 }
 
-@media screen and (max-width:1300px) {  
-  li{
-    grid-template-areas:
-    "title title title pic "
-    "topic author . pic"
-    "votes comments . pic "
-    "created_at . . pic"
-    ;
-    }
-
-    #article_img_url{
-    margin-left: -100px;
-    }
-  }
-
-@media screen and (max-width:950px) {  
-  li{
-    grid-template-areas:
-    "title title title . "
-    "topic author . . "
-    "votes comments . . "
-    "created_at . . ."
-    "pic . . . "
-    ;
-    }
-
-#article_img_url{
-  margin-left: 80px;
-  padding-bottom: 10px;
-}
-
-h3{
-  width: 354%;
-}
-}
-
 
 h1{
   font-size: auto;
@@ -408,58 +375,143 @@ h1{
 }
 
 .page{
-  height: 100vh;
+  height: 100%;
   display: grid;
-  grid-template-columns: 49% 8px 25% 25% ;
-  grid-template-rows: min-content min-content min-content auto min-content;
+  grid-template-columns: 35% 1% 32% 32% ;
+  grid-template-rows: min-content auto auto auto auto max-content min-content max-content;
   grid-template-areas: 
-  "title title title title "
-  "pic . topic author"
-  "pic . votes comments"
-  "body body body body"
-  "created_at created_at created_at created_at";
+  "title title title title"
+  "pic . body body"
+  "pic . body body"
+  "pic . author topic"
+  "pic . created_at votes"
+  "comment_title comment_title comments_count comments_count "
+  "comments comments comments comments";
 }
 
+#comment_section_art{
+  grid-area: comment_title;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
+  border-radius: 10px;
+  margin: 3px;
+  background-color: #c7c7c7;
+  font-size: 30px;
+  text-align: left;
+}
+
+#comments_art{
+  margin-top: 0px;
+  grid-area: comments;
+  border-radius: 10px;
+  margin-right: 3px;
+}
+
+#body_com{ 
+  grid-area: bodyC;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  padding-bottom: 20px;
+}
+#author_com{ 
+  grid-area: authorC;
+  padding-bottom: 45px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+}
+#votes_com{ 
+  grid-area: votesC;
+  padding-bottom: 45px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+}
+#created_at_com{ 
+  grid-area: created_atC;
+  padding-bottom: 45px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+#comment_count_art{
+  grid-area: comments_count;
+  margin: 3px;
+  background-color: #c7c7c7;
+  font-size: 20px;
+  border-radius: 10px;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
+  text-align: left;
+  font-size: 30px;
+}
+#comment_list{
+  height: fit-content;
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+  grid-template-rows: 70% 30%;
+  grid-template-areas:
+  "bodyC bodyC bodyC"
+  "authorC created_atC votesC";
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  white-space: wrap;
+  width: auto;
+  height: auto ;
+  border-radius: 10px;
+  
+}
+
+/* "comment_count comment_count" */
 
 #article_title_art{
   grid-area: title;
   background-color: #c7c7c7;
 }
 
+
 #body_art{
   grid-area: body;
-  border-top: 1px solid #c7c7c7;
-  border-right: 1px solid rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(0, 0, 0);
-  border-left: 1px solid #c7c7c7;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
   margin: 3px;
   background-color: #c7c7c7;
+  font-size: 20px;
 
 }
 #topic_art{
   grid-area: topic;
-  border-top: 1px solid #c7c7c7;
-  border-right: 1px solid rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(0, 0, 0);
-  border-left: 1px solid #c7c7c7;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
   margin: 3px;
   background-color: #c7c7c7;
+  font-size: 20px;
 }
 #author_art{ 
   grid-area: author;
-  border-top: 1px solid #c7c7c7;
-  border-right: 1px solid rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(0, 0, 0);
-  border-left: 1px solid #c7c7c7;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
   margin: 3px;
   background-color: #c7c7c7;
+  font-size: 20px;
 }
 
 #article_img_art{  
   grid-area: pic;
   object-fit: cover;
-  width: auto;
-  height: auto ;
+  width: max-content;
+  height: max-content ;
   max-height: 100%;
   max-width: 100%;
   border-radius: 10px;
@@ -467,36 +519,29 @@ h1{
   border-right: 3px solid rgb(0, 0, 0);
   border-bottom: 3px solid rgb(0, 0, 0);
   border-left: 3px solid #c7c7c7;
-  margin: 3px
+  margin: 3px;
 }
 
-#comment_count_art{
-  grid-area: comments;
-  border-top: 1px solid #c7c7c7;
-  border-right: 1px solid rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(0, 0, 0);
-  border-left: 1px solid #c7c7c7;
-  margin: 3px;
-  background-color: #c7c7c7;
-}
 #votes_art{
   grid-area: votes;
-  border-top: 1px solid #c7c7c7;
-  border-right: 1px solid rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(0, 0, 0);
-  border-left: 1px solid #c7c7c7;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
   margin: 3px;
   background-color: #c7c7c7;
+  font-size: 20px;
 }
 
 #created_at_art{
   grid-area: created_at;
-  border-top: 1px solid #c7c7c7;
-  border-right: 1px solid rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(0, 0, 0);
-  border-left: 1px solid #c7c7c7;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
   margin: 3px;
   background-color: #c7c7c7;
+  font-size: 20px;
 }
 
 @media screen and (max-width:760px) {  
@@ -519,18 +564,65 @@ h1{
     width: 210%;
   }
   .page{
-    height: 100vh;
     display: grid;
-    grid-template-columns: 48% 48% 4%;
-    grid-template-rows: min-content min-content min-content min-content auto min-content;
+    grid-template-columns: 32% 32% 32% 4%;
+    grid-template-rows: min-content max-content auto auto max-content min-content auto auto min-content;
     grid-template-areas: 
-    "title title title "
-    "pic pic ."
-    "topic author author"
-    "votes comments comments"
-    "body body body"
-    "created_at created_at created_at";
+    "title title title title"
+    "pic pic pic ."
+    "author author author author"
+    "topic topic votes votes "
+    "body body body body"
+    "created_at created_at created_at created_at"
+    "comments_count comments_count comments_count comments_count"
+    "comment_title comment_title comment_title comment_title"
+    "comments comments comments comments"
     
   }
-  /* //test git not accepting changes? */
+
+  #author_com{ 
+    font-size: 15px;
+  }
+  #votes_com{ 
+    font-size: 15px;
+  }
+  #created_at_com{ 
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width:1300px) {  
+  #mainPageList{
+    grid-template-areas:
+    "title title title pic "
+    "topic author . pic"
+    "votes comments . pic "
+    "created_at . . pic"
+    ;
+    }
+
+    #article_img_url{
+    margin-left: -100px;
+    }
+  }
+
+@media screen and (max-width:950px) {  
+  #mainPageList{
+    grid-template-areas:
+    "title title title . "
+    "topic author . . "
+    "votes comments . . "
+    "created_at . . ."
+    "pic . . . "
+    ;
+    }
+
+#article_img_url{
+  margin-left: 80px;
+  padding-bottom: 10px;
+}
+
+#com_page_title{
+  width: 354%;
+}
 }

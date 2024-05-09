@@ -23,7 +23,7 @@ const Home = () => {
         <ul id="article">
           {articles.map((article) => {
             return (
-              <li key={article.article_id}>
+              <li id="mainPageList" key={article.article_id}>
                 <Link to={`/articles/${article.article_id}`}>
                   <h3 id="article_title">{article.title}</h3>
                 </Link>
