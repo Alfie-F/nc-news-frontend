@@ -26,6 +26,8 @@ const Article = () => {
         getComments(article_id).then((comments) => {
           setComments(comments);
           setIsLoading(false);
+          if (storedVote === "up") {
+          }
         });
       })
       .then(() => {});
@@ -47,6 +49,7 @@ const Article = () => {
       setRenderIgnore(true);
     }
   }, [voteMinus]);
+  // console.log(document.getElementById("voteButton")).disabled = true;
 
   useEffect(() => {
     if (renderIgnore) {
@@ -62,6 +65,9 @@ const Article = () => {
       localStorage.setItem(`hasVoted${article_id}`, JSON.stringify("up"));
     } else {
       setRenderIgnore(true);
+      if (storedVote === "down") {
+        console.log(storedVote);
+      }
     }
   }, [votePlus]);
 
@@ -81,7 +87,7 @@ const Article = () => {
           <button id="voteButton" disabled={false} onClick={setVotePlus}>
             Praise it!
           </button>
-          <button id="voteButtonDown" onClick={setVoteMinus}>
+          <button id="voteButtonDown" disabled={false} onClick={setVoteMinus}>
             Point Down!
           </button>
         </p>
