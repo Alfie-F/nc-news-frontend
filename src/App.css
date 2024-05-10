@@ -383,14 +383,15 @@ h1{
   height: 100%;
   display: grid;
   grid-template-columns: 35% 1% 32% 32% ;
-  grid-template-rows: min-content auto auto auto auto max-content min-content max-content;
+  grid-template-rows: min-content auto auto auto auto max-content min-content min-content max-content;
   grid-template-areas: 
   "title title title title"
   "pic . body body"
   "pic . body body"
   "pic . author topic"
   "pic . votes created_at "
-  "comment_title comment_title comments_count comments_count "
+  "comment_title comment_title comments_count comments_count"
+  "submit_comment submit_comment submit_comment submit_comment"
   "comments comments comments comments";
 }
 
@@ -450,7 +451,7 @@ h1{
   border-bottom: 3px solid rgb(0, 0, 0);
   border-left: 3px solid #c7c7c7;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
 }
 #comment_list{
   height: fit-content;
@@ -579,7 +580,7 @@ h1{
     "topic votes votes votes "
     "body body body body"
     "created_at created_at created_at created_at"
-    "comments_count comments_count comments_count comments_count"
+    "comments_count comments_count submit_comment submit_comment"
     "comment_title comment_title comment_title comment_title"
     "comments comments comments comments"
     
@@ -614,7 +615,7 @@ h1{
       height: 100%;
       display: grid;
       grid-template-columns: 35% 1% 32% 32% ;
-      grid-template-rows: min-content auto auto auto auto max-content min-content max-content;
+      grid-template-rows: min-content auto auto auto auto max-content min-content min-content max-content;
       grid-template-areas: 
       "title title title title"
       "pic . body body"
@@ -622,6 +623,7 @@ h1{
       "votes votes author topic"
       "votes votes created_at created_at "
       "comment_title comment_title comments_count comments_count "
+      "submit_comment submit_comment submit_comment submit_comment"
       "comments comments comments comments";
     }
 
@@ -651,7 +653,7 @@ h1{
 .page{
   display: grid;
   grid-template-columns: 32% 32% 32% 4%;
-  grid-template-rows: min-content max-content max-content auto auto min-content auto auto min-content;
+  grid-template-rows: min-content max-content max-content auto auto min-content auto auto auto min-content;
   grid-template-areas: 
   "title title title title"
   "body body body body"
@@ -661,6 +663,7 @@ h1{
   "created_at created_at created_at created_at"
   "comments_count comments_count comments_count comments_count"
   "comment_title comment_title comment_title comment_title"
+  "submit_comment submit_comment submit_comment submit_comment"
   "comments comments comments comments"
 }
 
@@ -767,4 +770,71 @@ h1{
   transform: none;
   border: none;
 
+}
+
+#submit_comment_art{
+  grid-area: submit_comment;
+  border-top: 3px solid #c7c7c7;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid #c7c7c7;
+  border-radius: 10px;
+  margin: 3px;
+  background-color: #c7c7c7;
+  font-size: 20px;
+  text-align: left;
+  display: grid;
+  grid-template-columns:25% 25% 25% 25%;
+  grid-template-rows: 40px 40px;
+  grid-template-areas: 
+  "txt txt label label"
+    "submit submit submit submit_button"
+    "pop pop pop pop";
+}
+
+/* #submit_comment{
+grid-area: submit;
+} */
+
+#submit_txt{
+  grid-area: txt;
+  margin-left: 12px;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+#write_comment{
+  grid-area: submit;
+  margin-top: 0px;
+  margin-left: 10px;
+  width: 80%;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+#fig{
+  margin-left: 5px;
+}
+
+#comment_label{
+  text-align: right;
+  grid-area: label;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 20px
+}
+
+#submit_button{
+  grid-area: submit_button;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+}
+
+#popUp{
+  grid-area: pop;
+  margin-left: 12px;
+  color: red;
+  font-size: 12px;
 }

@@ -39,13 +39,26 @@ export function getComments(article_id) {
 }
 
 export function postVote(article_id, vote) {
-  console.log(vote);
-
   axios
     .patch(`https://alfs-nc-news.onrender.com/api/articles/${article_id}`, {
       inc_votes: vote,
     })
     .then((res) => {
       return res.data.update;
+    });
+}
+
+export function postComment(article_id, user, comment) {
+  axios
+    .post(
+      `https://alfs-nc-news.onrender.com/api/articles/${article_id}/comments`,
+      {
+        username: user,
+        body: comment,
+      }
+    )
+    .then((res) => {
+      const newComment = res.data.comment;
+      return newComment;
     });
 }
