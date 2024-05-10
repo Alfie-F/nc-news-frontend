@@ -296,6 +296,11 @@ font-size: 25px;
 
 button:hover{background-color:rgb(47, 130, 207);}
 
+button:active { 
+  transform: scale(0.95); 
+  box-shadow: 5px 5px 22px 5px rgba(0, 0, 0, 0.24); 
+} 
+
 /* button:focus{background-color:red;} */
 
 #aside2{
@@ -384,7 +389,7 @@ h1{
   "pic . body body"
   "pic . body body"
   "pic . author topic"
-  "pic . created_at votes"
+  "pic . votes created_at "
   "comment_title comment_title comments_count comments_count "
   "comments comments comments comments";
 }
@@ -459,7 +464,7 @@ h1{
   padding: 0px;
   margin: 0px;
   margin-bottom: 10px;
-  padding-bottom: 6px;
+  padding-bottom: 12px;
   white-space: wrap;
   width: auto;
   height: auto ;
@@ -571,7 +576,7 @@ h1{
     "title title title title"
     "pic pic pic ."
     "author author author author"
-    "topic topic votes votes "
+    "topic votes votes votes "
     "body body body body"
     "created_at created_at created_at created_at"
     "comments_count comments_count comments_count comments_count"
@@ -604,6 +609,23 @@ h1{
     #article_img_url{
     margin-left: -100px;
     }
+
+    .page{
+      height: 100%;
+      display: grid;
+      grid-template-columns: 35% 1% 32% 32% ;
+      grid-template-rows: min-content auto auto auto auto max-content min-content max-content;
+      grid-template-areas: 
+      "title title title title"
+      "pic . body body"
+      "votes votes body body"
+      "votes votes author topic"
+      "votes votes created_at created_at "
+      "comment_title comment_title comments_count comments_count "
+      "comments comments comments comments";
+    }
+
+    
   }
 
 @media screen and (max-width:950px) {  
@@ -625,4 +647,124 @@ h1{
 #com_page_title{
   width: 354%;
 }
+
+.page{
+  display: grid;
+  grid-template-columns: 32% 32% 32% 4%;
+  grid-template-rows: min-content max-content max-content auto auto min-content auto auto min-content;
+  grid-template-areas: 
+  "title title title title"
+  "body body body body"
+  "pic pic pic ."
+  "author author topic topic"
+  "votes votes votes votes"
+  "created_at created_at created_at created_at"
+  "comments_count comments_count comments_count comments_count"
+  "comment_title comment_title comment_title comment_title"
+  "comments comments comments comments"
+}
+
+}
+
+#voteButton{
+  text-align: center;
+  /* width: 106px; */
+  min-height: 30px;
+  border-right: 1px solid rgb(47, 130, 207);
+  border-bottom: 1px solid rgb(47, 130, 207);
+  border-top: 1px solid #abcff0;
+  border-bottom: 1px solid #abcff0;
+  border-radius: 15%;
+  margin: 5px;
+  margin-left: 0px;
+  height: 110px;
+  width:180px
+}
+
+#voteButton:active{
+  color:rgba(0, 0, 0, 0.24);
+  background-image: url("./assets/200w.gif");
+  height: 110px;
+  width:180px;
+  box-shadow: 5px 5px 22px 5px rgba(0, 0, 0, 0.24); 
+}
+
+#voteButton:disabled{
+  background-color:  #adadad;
+  background-image: none;
+  box-shadow: none;
+  transform: none;
+  border: none
+}
+
+#voteButton2{
+  text-align: center;
+  /* width: 106px; */
+  min-height: 30px;
+  border-right: 1px solid rgb(47, 130, 207);
+  border-bottom: 1px solid rgb(47, 130, 207);
+  border-top: 1px solid #abcff0;
+  border-bottom: 1px solid #abcff0;
+  border-radius: 15%;
+  margin: 5px;
+  margin-left: 0px;
+  height: 110px;
+  width:180px ;
+  background-color:  #adadad;
+  background-image: none;
+  box-shadow: none;
+  transform: none;
+  border: none
+}
+
+#voteButtonDown{
+  text-align: center;
+  /* width: 106px; */
+  min-height: 30px;
+  border-right: 1px solid rgb(47, 130, 207);
+  border-bottom: 1px solid rgb(47, 130, 207);
+  border-top: 1px solid #abcff0;
+  border-bottom: 1px solid #abcff0;
+  border-radius: 15%;
+  margin: 5px;
+  margin-left: 0px;
+  height: 110px;
+  width:180px
+}
+
+#voteButtonDown:active{
+  color:rgba(0, 0, 0, 0.24);
+  background-image: url("./assets/dark-souls.gif");
+  height: 110px;
+  width:180px ;
+  box-shadow: 5px 5px 22px 5px rgba(0, 0, 0, 0.24); 
+}
+
+#voteButtonDown:disabled{
+  background-color:  #adadad;
+  background-image: none;
+  box-shadow: none;
+  transform: none;
+  border: none
+}
+
+#voteButtonDown2{
+  text-align: center;
+  /* width: 106px; */
+  min-height: 30px;
+  border-right: 1px solid rgb(47, 130, 207);
+  border-bottom: 1px solid rgb(47, 130, 207);
+  border-top: 1px solid #abcff0;
+  border-bottom: 1px solid #abcff0;
+  border-radius: 15%;
+  margin: 5px;
+  margin-left: 0px;
+  height: 110px;
+  width:180px ;
+  background-color:  #adadad;
+  background-image: none;
+  box-shadow: none;
+  transform: none;
+  border: none;
+
 }
